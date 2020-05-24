@@ -6,7 +6,7 @@
 * Tmux
 * Nvim
 * Alacritty
-* oh-my-zsh (pending)
+* Zsh
 
 ## How to use .dotfiles
 
@@ -23,3 +23,6 @@ Clone the repository in your home folder, then make the links to each tools one 
 
 ### Alacritty
 `stow alacritty`
+
+### Zsh
+`stow zsh`
