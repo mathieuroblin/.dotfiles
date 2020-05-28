@@ -51,14 +51,31 @@ set history=50 " Set command history to 50 items
 set showcmd    " Display an incomplete command in the vim window
 set incsearch  " Display matches for a search pattern while you type
 
-" Add relative line numbers to the gutter
-set number
-set relativenumber
+set number relativenumber " Add relative line numbers to the gutter
+
+set shiftwidth=2 " Indent in normal mode is 2 spaces
+set tabstop=2    " Number of space a tab is
+set expandtab    " In insert mode use tabstop
 
 " NERDTREE
 " let g:NERDTreeQuitOnOpen = 1
 
+" ----------------------
+" ----- LSP CONFIG -----
+" ----------------------
+	
+if filereadable(glob('~/Desktop/tooling/clj-kondo'))
+	au User lsp_setup call lsp#register_server({
+  \   'name': 'kondo-lsp',
+	\   'cmd': {server_info->[&shell, &shellcmdflag, 'java -jar ~/Desktop/tooling/clj-kondo']},
+	\   'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'deps.edn'))},
+  \   'whitelist': ['clojure'],
+  \ })
+endif
+
+" -------------------
 " ----- MAPPING -----
+" -------------------
 
 " Misc
 " Clear search highlight
