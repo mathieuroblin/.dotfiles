@@ -43,6 +43,8 @@ endif
 let g:sonokai_style = 'andromeda'
 colorscheme sonokai
 
+let g:lightline = {'colorscheme' : 'sonokai'}
+
 let g:rainbow_active = 1
 set noshowmode " Replaced by lightline
 
