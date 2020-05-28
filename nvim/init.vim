@@ -45,6 +45,8 @@ colorscheme sonokai
 let g:rainbow_active = 1
 
 " ----- VIM -----
+let mapleader = ' ' 
+
 set ignorecase " Ignore case in search
 set autoindent " Set autoindent when creating a new file
 set history=50 " Set command history to 50 items
@@ -57,8 +59,11 @@ set shiftwidth=2 " Indent in normal mode is 2 spaces
 set tabstop=2    " Number of space a tab is
 set expandtab    " In insert mode use tabstop
 
-" NERDTREE
-" let g:NERDTreeQuitOnOpen = 1
+" --------------------
+" ----- NERDTREE -----
+" --------------------
+let g:NERDTreeQuitOnOpen = 1
+nnoremap <Leader>n :NERDTreeToggle<Cr>
 
 " ----------------------
 " ----- LSP CONFIG -----
