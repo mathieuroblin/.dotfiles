@@ -17,6 +17,7 @@ Plug 'junegunn/fzf.vim'
 " VISUAL
 Plug 'sainnhe/sonokai'
 Plug 'luochen1990/rainbow'
+Plug 'itchyny/lightline.vim'
 
 " GOLANG
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
@@ -43,6 +44,7 @@ let g:sonokai_style = 'andromeda'
 colorscheme sonokai
 
 let g:rainbow_active = 1
+set noshowmode " Replaced by lightline
 
 " ----- VIM -----
 let mapleader = ' ' 
