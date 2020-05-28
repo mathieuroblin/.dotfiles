@@ -69,6 +69,14 @@ set expandtab    " In insert mode use tabstop
 let g:NERDTreeQuitOnOpen = 1
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 
+" ---------------
+" ----- FZF ------
+" ---------------
+nnoremap <Leader>ff :Files<Cr>
+nnoremap <Leader>fb :Buffers<Cr>
+nnoremap <Leader>fl :Lines<Cr>
+nnoremap <Leader>fm :Marks<Cr>
+
 " ----------------------
 " ----- LSP CONFIG -----
 " ----------------------
