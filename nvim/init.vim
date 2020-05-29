@@ -20,7 +20,7 @@ Plug 'luochen1990/rainbow'
 Plug 'itchyny/lightline.vim'
 
 " GOLANG
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
 
 " CLOJURE
 Plug 'guns/vim-sexp', {'for': ['clojure']}
@@ -50,6 +50,7 @@ set noshowmode " Replaced by lightline
 
 " ----- VIM -----
 let mapleader = ' ' 
+let maplocalleader = ','
 
 set ignorecase " Ignore case in search
 set autoindent " Set autoindent when creating a new file
@@ -93,6 +94,13 @@ endif
 " -------------------
 " ----- MAPPING -----
 " -------------------
+
+" GO
+augroup go_shortcuts
+  autocmd!
+  autocmd FileType go nnoremap <buffer> <LocalLeader>gd :GoDoc<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>gD :GoDef<CR>
+augroup END
 
 " Misc
 " Clear search highlight
