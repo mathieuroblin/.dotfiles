@@ -1,4 +1,3 @@
-" Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -13,6 +12,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " VISUAL
 Plug 'sainnhe/sonokai'
@@ -45,7 +46,7 @@ colorscheme sonokai
 
 let g:lightline = {'colorscheme' : 'sonokai'}
 
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 set noshowmode " Replaced by lightline
 
 " ----- VIM -----
@@ -63,6 +64,7 @@ set number relativenumber " Add relative line numbers to the gutter
 set shiftwidth=2 " Indent in normal mode is 2 spaces
 set tabstop=2    " Number of space a tab is
 set expandtab    " In insert mode use tabstop
+set hidden       " Can move buffers with changes
 
 " --------------------
 " ----- NERDTREE -----
@@ -70,13 +72,20 @@ set expandtab    " In insert mode use tabstop
 let g:NERDTreeQuitOnOpen = 1
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 
-" ---------------
+" ----------------
 " ----- FZF ------
-" ---------------
+" ----------------
+nnoremap <Leader>: :Commands<Cr>
+nnoremap <Tab> :Buffers<Cr>
 nnoremap <Leader>ff :Files<Cr>
-nnoremap <Leader>fb :Buffers<Cr>
 nnoremap <Leader>fl :Lines<Cr>
 nnoremap <Leader>fm :Marks<Cr>
+
+" ---------------------
+" ----- FUGITIVE ------
+" ---------------------
+
+nnoremap <Leader>G :G<Cr>
 
 " ----------------------
 " ----- LSP CONFIG -----
@@ -91,16 +100,43 @@ if filereadable(glob('~/Desktop/tooling/clj-kondo'))
   \ })
 endif
 
+" ---------------------
+" ----- GO CONFIG -----
+" ---------------------
+
+" GO
+"autocmd FileType go let g:go_fmt_autosave = 1
+autocmd FileType go let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
+autocmd FileType go let g:go_auto_type_info = 1
+autocmd FileType go let g:go_highlight_extra_types = 1
+autocmd FileType go let g:go_highlight_operators = 1
+autocmd FileType go let g:go_highlight_functions = 1
+autocmd FileType go let g:go_highlight_function_parameters = 1
+autocmd FileType go let g:go_highlight_function_calls = 1
+autocmd FileType go let g:go_highlight_types = 1
+autocmd FileType go let g:go_highlight_fields = 1
+autocmd FileType go let g:go_highlight_generate_tags = 1
+autocmd FileType go let g:go_highlight_format_strings = 1
+autocmd FileType go let g:go_highlight_variable_declarations = 1
+autocmd FileType go let g:go_highlight_variable_assignments = 1
+
+augroup go_config
+  autocmd!
+  "autocmd FileType go setlocal foldmethod = syntax
+  autocmd FileType go nnoremap <buffer> <LocalLeader>D :GoDef<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>dg :GoDiagnostics<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>dc :GoDoc<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>f :GoFmt<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>S :GoImpl<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>s :GoImplements<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>i :GoImport 
+  autocmd FileType go nnoremap <buffer> <LocalLeader>I :GoImports<CR>
+  autocmd FileType go nnoremap <buffer> <LocalLeader>l :GoMetaLinter<CR>
+augroup END
+
 " -------------------
 " ----- MAPPING -----
 " -------------------
-
-" GO
-augroup go_shortcuts
-  autocmd!
-  autocmd FileType go nnoremap <buffer> <LocalLeader>gd :GoDoc<CR>
-  autocmd FileType go nnoremap <buffer> <LocalLeader>gD :GoDef<CR>
-augroup END
 
 " Misc
 " Clear search highlight
