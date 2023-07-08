@@ -1,5 +1,5 @@
 --[[
-     GLOBALS    
+     GLOBALS
 --]]
 -- Changing Leader and LocalLeader keys
 vim.g.mapleader = ' '
