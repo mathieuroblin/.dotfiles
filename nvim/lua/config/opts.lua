@@ -18,7 +18,7 @@ vim.o.relativenumber = true -- Turn of relative number of line based on cursor
 vim.o.hlsearch = true -- Highlight the search results
 vim.o.undofile = true -- Keep a persistent copy of the undo 
 
-vim.o.ignorcase = true -- Ignore case in search pattern -> `\C` at the end of the pattern to turn off
+vim.o.ignorecase = true -- Ignore case in search pattern -> `\C` at the end of the pattern to turn off
 vim.o.smartcase = true -- Only ignore case when the pattern is not in all lowercase
 
 vim.o.termguicolors = true -- Turn on 256 colors
