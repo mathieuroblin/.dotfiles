@@ -1,6 +1,6 @@
-require('config.cmds')
-require('config.maps')
 require('config.opts')
+require('config.maps')
+require('config.cmds')
 
 -- Installer Package Manager (LazyVim)
 -- Repo: https://github.com/folke/lazy.nvim
