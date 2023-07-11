@@ -19,11 +19,11 @@ vim.o.hlsearch = true -- Highlight the search results
 vim.o.undofile = true -- Keep a persistent copy of the undo 
 
 vim.o.ignorecase = true -- Ignore case in search pattern -> `\C` at the end of the pattern to turn off
-vim.o.smartcase = true -- Only ignore case when the pattern is not in all lowercase
+vim.o.smartcase = false -- Only ignore case when the pattern is not in all lowercase
 
 vim.o.termguicolors = true -- Turn on 256 colors
 vim.o.completeopt = "menu,noselect" -- Completion window preferences
-vim.o.scrolloff = 5 -- Keep n lines of context around the cursos in the window
+vim.o.scrolloff = 10 -- Keep n lines of context around the cursos in the window
 
 vim.o.list = true -- Display characters for invisible char
 vim.o.expandtab = true -- Insert spaces instead of tabs
@@ -32,7 +32,9 @@ vim.o.softtabstop = 2 -- Number of spaces for a tab in edit
 vim.o.shiftwidth = 2 -- Number of spaces for auto indent
 vim.o.smartindent = true -- Keep indent between lines
 
-vim.o.colorcolumn = 80 -- Show a 80 column delimiter
+vim.o.colorcolumn = '100' -- Show a 80 column delimiter
 
 vim.o.wildmenu = true
 vim.o.wildmode = "longest:full,full"
+
+vim.o.foldmethod = "syntax"
