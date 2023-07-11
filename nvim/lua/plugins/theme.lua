@@ -4,22 +4,32 @@
 
 return {
 
-  -- https://github.com/catppuccin/vim
+  -- https://github.com/catppuccin/nvim
   {
-    'catppuccin/vim',
+    'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
     config = function ()
-      vim.cmd.colorscheme 'catppuccin_mocha'
+      local cp = require('catppuccin')
+
+      cp.setup({
+        flavour = 'mocha',
+        integrations = {
+          gitsigns = true,
+          telescope = { enabled = true },
+          which_key = true,
+        },
+      })
+
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 
   -- https://github.com/itchyny/lightline.vim
-  { 
+  {
     'itchyny/lightline.vim',
     config = function ()
-      vim.g.lightline = { colorscheme = 'catppuccin_mocha' }
+      vim.g.lightline = { colorscheme = 'catppuccin' }
     end,
   },
-
 }
