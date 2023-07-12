@@ -14,6 +14,11 @@ return {
 
       cp.setup({
         flavour = 'mocha',
+        dim_inactive = {
+            enabled = true,
+            shade = "dark",
+            percentage = 0.15,
+        },
         integrations = {
           gitsigns = true,
           telescope = { enabled = true },
