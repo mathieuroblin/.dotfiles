@@ -5,6 +5,7 @@
 return {
   {
     'Olical/conjure',
+    tag = 'v4.46.0',
     lazy = true,
     ft = { 'clojure' },
     config = function ()

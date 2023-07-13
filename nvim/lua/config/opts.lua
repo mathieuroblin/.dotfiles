@@ -16,7 +16,7 @@ vim.o.cursorline = false -- Turn on the highlight of the line where the cursor i
 vim.o.number = true -- Turn on the line number
 vim.o.relativenumber = true -- Turn of relative number of line based on cursor
 vim.o.hlsearch = true -- Highlight the search results
-vim.o.undofile = true -- Keep a persistent copy of the undo 
+vim.o.undofile = true -- Keep a persistent copy of the undo
 
 vim.o.ignorecase = true -- Ignore case in search pattern -> `\C` at the end of the pattern to turn off
 vim.o.smartcase = false -- Only ignore case when the pattern is not in all lowercase

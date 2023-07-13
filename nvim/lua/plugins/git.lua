@@ -3,6 +3,11 @@
 --]]
 
 return {
-  'tpope/vim-fugitive', -- https://github.com/tpope/vim-fugitive
+  {
+    -- https://github.com/tpope/vim-fugitive
+    'tpope/vim-fugitive',
+    commit = '43f18ab',
+    pin = true,
+  },
 }
 

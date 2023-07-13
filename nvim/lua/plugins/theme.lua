@@ -8,6 +8,7 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
+    commit = '3ffd2f5',
     priority = 1000,
     config = function ()
       local cp = require('catppuccin')
@@ -37,4 +38,18 @@ return {
       vim.g.lightline = { colorscheme = 'catppuccin' }
     end,
   },
+
+  -- https://github.com/nvim-lualine/lualine.nvim
+  --[[
+  {
+    'nvim-lualine/lualine.nvim',
+    name = 'lualine',
+    commit = '05d78e9',
+    priority = 1000,
+    config = true,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
+  --]]
 }

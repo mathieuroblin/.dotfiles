@@ -60,6 +60,7 @@ return {
   -- https://github.com/guns/vim-sexp
   {
     'guns/vim-sexp',
+    commit = '14464d4',
     ft = { "clojure" },
     init = function()
       -- Disable all out of the box bindings
