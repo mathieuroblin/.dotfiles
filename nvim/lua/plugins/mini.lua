@@ -20,13 +20,11 @@ return {
     --]]
 
     -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump.md
-    --[[
     {
       'echasnovski/mini.jump',
       version = '*',
       config = true,
     },
-    --]]
 
     -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
     {
