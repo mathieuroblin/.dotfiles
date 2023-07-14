@@ -19,6 +19,13 @@ return {
     },
     --]]
 
+    -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md
+    {
+      'echasnovski/mini.comment',
+      tag = 'v0.9.0',
+      config = true,
+    },
+
     -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-jump.md
     {
       'echasnovski/mini.jump',
