@@ -22,6 +22,7 @@ return {
         },
         integrations = {
           gitsigns = true,
+          cmp = true,
           telescope = { enabled = true },
           which_key = true,
         },
@@ -31,25 +32,23 @@ return {
     end,
   },
 
-  -- https://github.com/itchyny/lightline.vim
-  {
-    'itchyny/lightline.vim',
-    config = function ()
-      vim.g.lightline = { colorscheme = 'catppuccin' }
-    end,
-  },
-
   -- https://github.com/nvim-lualine/lualine.nvim
-  --[[
   {
     'nvim-lualine/lualine.nvim',
     name = 'lualine',
     commit = '05d78e9',
     priority = 1000,
-    config = true,
+    config = function ()
+      require('lualine').setup({
+        options = {
+          theme = 'catppuccin',
+        },
+      })
+    end
+    --[[
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    -]]
   },
-  --]]
 }
