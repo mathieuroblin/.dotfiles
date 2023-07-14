@@ -9,6 +9,7 @@ return {
       -- event = 'InsertEnter',
       dependencies = {
         -- 'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-path',
         -- TODO move this as dependency of conjure
         'PaterJason/cmp-conjure',
@@ -20,6 +21,7 @@ return {
           sources = {
             { name = 'conjure' },
             { name = 'path' },
+            { name = 'nvim_lua' },
           },
           window = {
             completion = cmp.config.window.bordered(),

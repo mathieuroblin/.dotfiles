@@ -37,4 +37,3 @@ vim.o.colorcolumn = '100' -- Show a 80 column delimiter
 vim.o.wildmenu = true
 vim.o.wildmode = "longest:full,full"
 
-vim.o.foldmethod = "syntax"

@@ -21,9 +21,10 @@ return {
             percentage = 0.15,
         },
         integrations = {
-          gitsigns = true,
           cmp = true,
+          gitsigns = true,
           telescope = { enabled = true },
+          treesitter = true,
           which_key = true,
         },
       })
