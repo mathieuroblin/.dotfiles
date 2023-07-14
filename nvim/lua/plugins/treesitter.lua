@@ -22,9 +22,11 @@ return {
           "yaml",
         },
         sync_install = false,
+        --[[
         highlight = {
           enable = true,
-        },
+        }
+        --]]
       })
 
       vim.o.foldmethod = "expr"
