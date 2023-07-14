@@ -9,6 +9,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function ()
+      local autogrp = vim.api.nvim_create_augroup
+      local autocmd = vim.api.nvim_create_autocmd
+
       require('nvim-treesitter.configs').setup({
         ensure_installed = {
           "bash",
@@ -32,6 +35,17 @@ return {
       vim.o.foldmethod = "expr"
       vim.o.foldexpr = "nvim_treesitter#foldexpr()"
       vim.o.foldenable = false
+
+      local gitgrp = autogrp('Git Fold', { clear = true })
+      autocmd('FileType', {
+        group = sexpgrp,
+        pattern = { 'git' },
+        callback = function ()
+          vim.o.foldmethod = "syntax"
+          vim.o.foldenable = true
+        end
+      })
+
     end
   }
 }
