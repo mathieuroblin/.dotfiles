@@ -13,11 +13,12 @@ return {
       local wk = require('which-key')
 
       wk.register({
-        G = {
+        g = {
           name = 'Git',
-          c = { ':G commit<cr>', 'commit' },
-          l = { ':vertical G log<cr>', 'logs' },
-          s = { ':G status<cr>', 'status' },
+          g = { ':Git<cr>', ':Git'},
+          ['ll'] = { ':vertical Git log<cr>', 'logs' },
+          ['lg'] = {'vertical Git log --graph', 'Graph'},
+          L = { ':vertical G log --oneline --graph<cr>', 'logs' },
         },
       }, { prefix = '<leader>' })
     end,
@@ -34,29 +35,28 @@ return {
     config = function(_, opts)
       local wk = require('which-key')
       local gs = require('gitsigns')
-      --[[
+
       wk.register({
         h = {
-          name = 'Gitsigns',
-          b = { ':Gitsigns blame_line<cr>', 'Blame line' },
-          p = { ':Gitsigns preview_hunk<cr>', 'Preview hunk' },
+          name = 'Hunks',
+          -- b = { ':Gitsigns blame_line<cr>', 'Blame line' },
+          P = { ':Gitsigns preview_hunk<cr>', 'Preview hunk' },
           s = { ':Gitsigns stage_hunk<cr>', 'Stage hunk' },
           u = { ':Gitsigns undo_stage_hunk<cr>', 'Undo stage hunk' },
           r = { ':Gitsigns reset_hunk<CR>', 'Reset hunk' },
-          S = { ':Gitsigns stage_buffer<cr>', 'Stage buffer' },
-          R = { ':Gitsigns reset_buffer<cr>', 'Reset buffer' },
+          -- S = { ':Gitsigns stage_buffer<cr>', 'Stage buffer' },
+          -- R = { ':Gitsigns reset_buffer<cr>', 'Reset buffer' },
           n = { ':Gitsigns next_hunk<cr>', 'Next hunk' },
-          N = { ':Gitsigns prev_hunk<cr>', 'Prev hunk' },
-          t = {
-            name = 'Toggle',
-            b = { ':Gitsigns toggle_current_line_blame<cr>', 'Curent line blame' },
-            d = { ':Gitsigns toggle_deleted<cr>', 'Deleted' },
-          },
-          d = { ':Gitsigns diffthist<cr>', 'Diff history' },
-          D = { ':Gitsigns diffhis ~<cr>', 'Diff ~history' },
+          p = { ':Gitsigns prev_hunk<cr>', 'Prev hunk' },
+          -- t = {
+          --   name = 'Toggle',
+          --   b = { ':Gitsigns toggle_current_line_blame<cr>', 'Curent line blame' },
+          --   d = { ':Gitsigns toggle_deleted<cr>', 'Deleted' },
+          -- },
+          -- d = { ':Gitsigns diffthist<cr>', 'Diff history' },
+          -- D = { ':Gitsigns diffhis ~<cr>', 'Diff ~history' },
         },
       }, { prefix = '<leader>' })
-      --]]
       gs.setup(opts)
     end,
   },
