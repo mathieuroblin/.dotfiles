@@ -13,6 +13,31 @@ return {
   },
   config = function()
     local wk = require('which-key')
+    local t = require('telescope')
+
+    t.setup({
+      defaults = {
+        mappings = {
+          i = {
+            ['<C-h>'] = 'which_key',
+          },
+        },
+      },
+      pickers = {
+        buffers = {
+          show_all_buffers = true,
+          sort_lastused = true,
+          mappings = {
+            i = {
+              ["<C-d>"] = "delete_buffer",
+            },
+            n = {
+              ['d'] = 'delete_buffer',
+            }
+          }
+        }
+      }
+    })
 
     wk.register({
       ['f'] = {
@@ -25,6 +50,7 @@ return {
         ['g'] = { '<cmd>Telescope live_grep<cr>', 'Live Grep' },
         ['R'] = { '<cmd>Telescope registers<cr>', 'Registers' },
         ['r'] = { '<cmd>Telescope resume<cr>', 'Resume' },
+        ['s'] = { '<cmd>Telescope treesitter<cr>', 'Symbols' },
         ['G'] = {
           name = 'Git',
           ['b'] = { '<cmd>Telescope git_branches<cr>', 'Branches' },
