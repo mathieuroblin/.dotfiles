@@ -4,9 +4,41 @@
 --]]
 
 local function register_maps(ev)
-  require('which-key').register({
+  local wk = require('which-key')
+
+  wk.register({
+    -- Go to
     ['gD'] = { vim.lsp.buf.declaration, 'Go to declaration' },
+    ['gd'] = { vim.lsp.buf.definition, 'Go to definition' },
+    ['gi'] = { vim.lsp.buf.implementation, 'Go to implementation' },
+    ['gt'] = { vim.lsp.buf.type_definition, 'Go to type definition' },
+    ['gr'] = { vim.lsp.buf.type_references, 'Go to type references' },
+    -- Documentation
+    ['K'] = { vim.lsp.buf.hover, 'Display doc hover' },
+    ['<c-k>'] = { vim.lsp.buf.signature_help, 'Display doc' },
   }, { buffer = ev.buf })
+
+  wk.register({
+    -- Operations
+    ['r'] = { vim.lsp.buf.rename, 'Rename' },
+    ['a'] = { vim.lsp.buf.code_action, 'Actions', mode = { 'n', 'v' } },
+    ['F'] = {
+      function()
+        vim.lsp.buf.format({ async = true })
+      end,
+      'Format'
+    },
+    -- Workspace
+    ['Wa'] = { vim.lsp.buf.add_workspace_folder, 'Add workspace folder' },
+    ['Wr'] = { vim.lsp.buf.add_workspace_folder, 'Remove workspace folder' },
+    ['Wl'] = {
+      function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end,
+      'List workspace folders'
+    },
+  }, { prefix = '<leader>', buffer = ev.buf })
+
 end
 
 return {
@@ -48,7 +80,7 @@ return {
           -- Enable completion triggered by <c-x><c-o>
           vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-          -- register_maps(ev)
+          register_maps(ev)
         end,
       })
     end,
