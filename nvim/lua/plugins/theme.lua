@@ -23,6 +23,7 @@ return {
         integrations = {
           cmp = true,
           gitsigns = true,
+          mason = true,
           markdown = true,
           rainbow_delimiters = true,
           telescope = { enabled = true },
