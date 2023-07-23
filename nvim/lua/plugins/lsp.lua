@@ -64,22 +64,21 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
+      'folke/which-key.nvim',
+      'hrsh7th/nvim-cmp',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig',
-      'folke/which-key.nvim',
     },
     config = function()
       local lspconfig = require('lspconfig')
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clojure_lsp
-      lspconfig.clojure_lsp.setup({})
+      lspconfig.clojure_lsp.setup({ capabilities = capabilities })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
-          -- Enable completion triggered by <c-x><c-o>
-          vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
           register_maps(ev)
         end,
       })

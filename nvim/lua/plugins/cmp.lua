@@ -6,21 +6,19 @@ return {
     -- https://github.com/hrsh7th/nvim-cmp
     {
       'hrsh7th/nvim-cmp',
-      -- event = 'InsertEnter',
       dependencies = {
         -- 'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-path',
-        -- TODO move this as dependency of conjure
-        'PaterJason/cmp-conjure',
       },
       config = function ()
         local cmp = require('cmp')
 
         cmp.setup({
           sources = {
-            { name = 'conjure' },
             { name = 'path' },
+            { name = 'nvim_lsp' },
             { name = 'nvim_lua' },
           },
           window = {
