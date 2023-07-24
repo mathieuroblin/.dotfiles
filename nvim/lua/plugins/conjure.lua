@@ -49,6 +49,16 @@ return {
           }
         }
       }, { prefix = '<localleader>' })
+
+      vim.api.nvim_create_autocmd('BufNewFile', {
+        group = vim.api.nvim_create_augroup('conjure_log_disable_lsp', { clear = true }),
+        pattern = { 'conjure-log-*' },
+        callback = function(ev)
+          vim.diagnostic.disable(ev.buf)
+        end,
+        desc = 'Conjure Log disable LSP diagnostics',
+      })
+
     end
   },
 }
