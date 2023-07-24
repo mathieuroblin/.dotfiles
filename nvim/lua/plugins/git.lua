@@ -29,7 +29,7 @@ return {
     'lewis6991/gitsigns.nvim',
     tag = 'v0.6',
     opts = {
-      signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+      signcolumn = false,  -- Toggle with `:Gitsigns toggle_signs`
       numhl      = true,  -- Toggle with `:Gitsigns toggle_numhl`
     },
     config = function(_, opts)
