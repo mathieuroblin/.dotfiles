@@ -74,7 +74,16 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clojure_lsp
-      lspconfig.clojure_lsp.setup({ capabilities = capabilities })
+      lspconfig.clojure_lsp.setup({
+        root_dir = get_clojure_repl_optimal_root_dir,
+        capabilities = capabilities,
+      })
+
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+      lspconfig.tsserver.setup({
+        cmd = { 'npx', "typescript-language-server", "--stdio" },
+        capabilities = capabilities,
+      })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
