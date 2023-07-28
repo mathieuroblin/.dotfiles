@@ -29,7 +29,7 @@ return {
           sort_lastused = true,
           mappings = {
             i = {
-              ["<C-d>"] = "delete_buffer",
+              ['<C-d>'] = 'delete_buffer',
             },
             n = {
               ['d'] = 'delete_buffer',
