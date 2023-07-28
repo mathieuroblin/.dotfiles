@@ -51,6 +51,7 @@ return {
         ['g'] = { '<cmd>Telescope live_grep<cr>', 'Live Grep' },
         ['r'] = { '<cmd>Telescope resume<cr>', 'Resume' },
         ['?'] = { '<cmd>Telescope help_tags<cr>', 'Help Tags' },
+        [':'] = { '<cmd>Telescope command_history<cr>', 'Commands History' },
         ['/'] = { '<cmd>Telescope search_history<cr>', 'Search History' },
         ['l'] = {
           name = 'LSPs',
