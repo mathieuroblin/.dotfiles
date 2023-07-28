@@ -11,7 +11,7 @@ local function register_maps(ev)
     ['gD'] = { vim.lsp.buf.declaration, 'Go to declaration' },
     ['gd'] = { vim.lsp.buf.definition, 'Go to definition' },
     ['gi'] = { vim.lsp.buf.implementation, 'Go to implementation' },
-    ['gt'] = { vim.lsp.buf.type_definition, 'Go to type definition' },
+    ['gT'] = { vim.lsp.buf.type_definition, 'Go to type definition' },
     ['gr'] = { vim.lsp.buf.type_references, 'Go to type references' },
     -- Documentation
     ['K'] = { vim.lsp.buf.hover, 'Display doc hover' },
