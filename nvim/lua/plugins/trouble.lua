@@ -5,7 +5,7 @@ return {
       'folke/trouble.nvim',
       dependencies = { "nvim-tree/nvim-web-devicons" },
       opts = {
-        height = 15,
+        height = 10,
         use_diagnostic_signs = true,
       },
       config = function (_, opts)
