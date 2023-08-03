@@ -36,17 +36,20 @@ return {
       -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
       vim.o.foldmethod = "syntax"
       vim.o.foldenable = false
-
-      local fold = autogrp('Fold', { clear = true })
-      autocmd('FileType', {
-        group = fold,
-        pattern = { 'clojure', 'git' },
-        callback = function ()
-          vim.o.foldmethod = "syntax"
-          vim.o.foldenable = true
-        end
-      })
-
+      --
+      -- local fold = autogrp('Fold', { clear = true })
+      -- autocmd('FileType', {
+      --   group = fold,
+      --   pattern = {
+      --     'clojure',
+      --     'git',
+      --   },
+      --   callback = function ()
+      --     vim.o.foldmethod = "syntax"
+      --     vim.o.foldenable = true
+      --   end
+      -- })
+      --
     end
   }
 }
