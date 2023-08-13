@@ -5,6 +5,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>n', '<cmd>nohlsearch<cr>', { silent = true
 vim.keymap.set({ 'n' }, '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Close buffer' })
 vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>bnext<cr>', { silent = true, desc = 'Next buffer' })
 vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>bprevious<cr>', { silent = true, desc = 'Previous buffer' })
+vim.keymap.set({ 'n' }, '<leader>b-', '<cmd>buffer #<cr>', { silent = true, desc = 'Alternate buffer' })
 
 vim.keymap.set({ 'n' }, '<leader>wk', '<c-w>k', { silent = true, desc = 'Window Up' })
 vim.keymap.set({ 'n' }, '<leader>wj', '<c-w>j', { silent = true, desc = 'Window Down' })
