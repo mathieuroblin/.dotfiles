@@ -72,8 +72,8 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      -- Taken from https://github.com/nvim-lualine/lualine.nvim/blob/05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9/lua/lualine/components/diagnostics/config.lua#L7C9-L7C9
 
+      -- Taken from https://github.com/nvim-lualine/lualine.nvim/blob/05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9/lua/lualine/components/diagnostics/config.lua#L7C9-L7C9
       -- for consistency with lualine
       vim.fn.sign_define('DiagnosticSignError', { text = '󰅚 ', texthl = 'DiagnosticSignError' })
       vim.fn.sign_define('DiagnosticSignWarn',  { text = '󰀪 ', texthl = 'DiagnosticSignWarn'  })
@@ -82,7 +82,7 @@ return {
 
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clojure_lsp
       lspconfig.clojure_lsp.setup({
-        root_dir = get_clojure_repl_optimal_root_dir,
+        root_dir = vim.fn.getcwd,
         capabilities = capabilities,
       })
 
