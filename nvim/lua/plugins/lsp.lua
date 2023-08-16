@@ -41,6 +41,10 @@ local function register_maps(ev)
 
 end
 
+local function current_workdir()
+  return vim.fn.getcwd()
+end
+
 return {
   -- https://github.com/williamboman/mason.nvim
   {
@@ -82,7 +86,7 @@ return {
 
       -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clojure_lsp
       lspconfig.clojure_lsp.setup({
-        root_dir = vim.fn.getcwd,
+        root_dir = current_workdir,
         capabilities = capabilities,
       })
 

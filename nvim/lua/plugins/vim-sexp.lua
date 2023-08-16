@@ -65,7 +65,7 @@ return {
     init = function()
       -- Disable all out of the box bindings
       vim.g.sexp_filetypes = ''
-      vim.g.sexp_insert_after_wrap = false
+      vim.g.sexp_insert_after_wrap = true
     end,
     -- dependencies = {
     --   'tpope/vim-sexp-mappings-for-regular-people' -- https://github.com/tpope/vim-sexp-mappings-for-regular-people
