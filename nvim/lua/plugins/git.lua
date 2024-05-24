@@ -7,7 +7,7 @@ return {
   {
     -- https://github.com/tpope/vim-fugitive
     'tpope/vim-fugitive',
-    commit = '43f18ab',
+    -- commit = '43f18ab',
     pin = true,
     config = function ()
       local wk = require('which-key')

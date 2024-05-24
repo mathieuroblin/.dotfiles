@@ -10,7 +10,7 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    commit = '3ffd2f5',
+    -- commit = '3ffd2f5',
     priority = 1000,
     config = function ()
       local cp = require('catppuccin')

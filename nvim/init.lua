@@ -3,7 +3,7 @@ require('config.maps')
 require('config.cmds')
 
 -- Installer Package Manager (LazyVim)
--- Repo: https://github.com/folke/lazy.nvim
+-- Repo:  https://github.com/folke/lazy.nvim
 -- Usage: https://github.com/folke/lazy.nvim#-usage
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
