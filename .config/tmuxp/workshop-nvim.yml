@@ -1,0 +1,8 @@
+session_name: workshop-nvim 
+windows:
+  - window_name: nvim
+    layout: tiled
+    shell_command_before:
+      - cd ~/Programming/workshops/nvim 
+    panes:
+      - ls -lah

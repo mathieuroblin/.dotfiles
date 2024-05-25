@@ -1,0 +1,14 @@
+session_name: eleven-deployment-prod
+windows:
+  - window_name: bastion
+    focus: true
+    panes:
+      - shell_command:
+        - ssh eleven-bastion
+  - window_name: boxes
+    layout: even-horizontal
+    panes:
+      - shell_command:
+        - ssh eleven-beta-a
+      - shell_command:
+        - ssh eleven-beta-b

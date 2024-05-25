@@ -1,0 +1,8 @@
+session_name: workshop-node-htmx
+windows:
+  - window_name: nvim
+    layout: tiled
+    shell_command_before:
+      - cd ~/Programming/workshops/node_htmx/
+    panes:
+      - ls -lah

@@ -1,0 +1,17 @@
+session_name: eleven-monorepo
+start_directory: ~/Programming/eleven/meta-monorepo/runeleven
+windows:
+  # - window_name: nrepl
+  #   start_directory: ~/Programming/eleven/meta-monorepo/runeleven/dev/one-repl
+  #   panes:
+  #     - shell_command:
+  #       - cd dev/one-repl
+  #       - clj -M:repl/conjure
+  - window_name: nrepl
+    panes:
+      - shell_command:
+        - clj -M:app-anvoicing-poc:test-arap:repl-conjure
+  - window_name: nvim
+    focus: true
+    panes:
+      - nvim
