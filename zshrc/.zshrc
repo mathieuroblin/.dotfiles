@@ -143,6 +143,8 @@ export LANG=en_US.UTF-8
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+eval "$(zoxide init --cmd cd zsh)"
+
 # My Functions
 
 # Exports all AWS credentials from a profile to the environment
