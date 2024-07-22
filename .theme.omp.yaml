@@ -2,22 +2,39 @@
 
 # Template Version
 version: 2
-# Adds a space at the end of the prompt
-final_space: true
 console_title_template: "{{ .Shell }} in {{ .Folder }}"
+final_space: true
+
+palette:
+  white: "#fff"
+  light-green: "#56B6C2"
+  light-blue: "#5FAAE8"
+  light-orange: "#DCB977"
+  light-red: #D0666F
+  
 blocks:
 - type: prompt
   alignment: left
   segments:
-  - type: os
+      
+  - type: text
+    template: "<#C591E8>\u276f</><#69FF94>\u276f</> "
     style: plain
-    foreground: "#fff"
-    background: "#000"
+    foreground: "p:white"
+
   - type: path
     style: plain
-    # style: powerline
-    # powerline_symbol: 
+    foreground: p:light-blue
     properties:
       style: letter
-      # mapped_locations:
-      #   C:\temp: 
+
+  - type: git
+    style: plain
+    foreground: p:light-green
+    template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}"
+    # template: {{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+    properties:
+      fetch_status: true
+      fetch_upstream_icon: true
+    #   untracked_modes:
+    #     /Users/user/Projects/oh-my-posh/: no

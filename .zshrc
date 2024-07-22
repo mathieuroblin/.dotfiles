@@ -167,6 +167,6 @@ function start_eleven_session() {
 
 # Custom Prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)"
-  # eval "$(oh-my-posh init zsh --config ~/.dotfiles/.theme.omp.yaml)"
+  # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)"
+  eval "$(oh-my-posh init zsh --config ~/.dotfiles/.theme.omp.yaml)"
 fi
