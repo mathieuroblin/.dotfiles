@@ -38,3 +38,20 @@ blocks:
       fetch_upstream_icon: true
     #   untracked_modes:
     #     /Users/user/Projects/oh-my-posh/: no
+
+  - type: aws
+    style: plain
+    foreground: "#FFA400"
+    # background: "#FFA400"
+    # template: "  {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+    template: "  {{.Profile}}"
+
+  - type: java
+    # style: powerline
+    # powerline_symbol: 
+    # foreground: "#ffffff"
+    # background: "#4063D8"
+    style: plain
+    foreground: "#4063D8"
+    display_mode: files
+    template: "  {{ .Full }}"
