@@ -126,6 +126,7 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias backup_secondbrain="rsync -vah --delete ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Second\ Brain ~/Library/CloudStorage/ProtonDrive-mathieu@roblin-it.com/Backups/"
+alias fgsw="git branch | fzf | xargs git switch"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
