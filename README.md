@@ -21,6 +21,9 @@ at the GitHub repository for configuration.
 https://github.com/tmux-python/tmuxp
 stow tmux
 
+# Scripts installation
+stow scripts
+
 TODO:
 - ADD ZSH
 - ADD ~/.p10k.zsh 
