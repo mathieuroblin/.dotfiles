@@ -27,6 +27,8 @@ blocks:
     foreground: p:light-blue
     properties:
       style: letter
+      # style: agnoster_short
+      max_depth: 5
 
   - type: git
     style: plain
