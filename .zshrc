@@ -132,6 +132,8 @@ alias fgbd="git branch | fzf --multi | xargs git branch -D"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+export BLING_CONFIG="$HOME/.bling/config.edn"
+
 eval "$(zoxide init --cmd cd zsh)"
 
 # My Functions
